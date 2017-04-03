@@ -9,6 +9,8 @@ int main(){
   queue<int> f1,f2;
   int i,n = 1;
 
+
+
   cin >> i;
 
   while(i){
