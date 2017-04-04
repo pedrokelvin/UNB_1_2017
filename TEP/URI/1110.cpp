@@ -9,8 +9,6 @@ int main(){
   queue<int> f1,f2;
   int i,n = 1;
 
-
-
   cin >> i;
 
   while(i){
@@ -35,7 +33,7 @@ int main(){
 
     while(!f1.empty())
       f1.pop();
-    while(f2.empty())
+    while(!f2.empty())
       f2.pop();
     cin >> i;
   }
@@ -49,11 +47,20 @@ void imprime(queue<int> f1, queue<int> f2){
 
   if(f2.empty()){
     cout << endl;
-    cout << "Remaining card: " << f1.front() << endl;
   }
-  else if(f2.size() > 0){
+  else if(f2.size() == 1){
     cout << f2.front() << endl;
-    cout << "Remaining card: " << f1.front() << endl;
+  }else if(f2.size() > 1){
+
+    while(!f2.empty()){
+      cout << f2.front();
+      f2.pop();
+
+      if(!f2.empty())
+        cout << ", ";
+    }
+    cout << endl;
   }
 
+  cout << "Remaining card: " << f1.front() << endl;
 }
