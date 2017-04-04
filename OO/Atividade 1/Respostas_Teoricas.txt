@@ -7,8 +7,11 @@ Questão 2
 	Uma Classe pode ter quantos métodos construtores alternativos quiser.	
 	
 	c)
-	d)
-	e)
+	
+	d)"Em Java, o operador .(ponto) serve para acessar os métodos e os atributos de um objeto".
+	A sentença é auto explicativa. 
+	
+	e)"Métodos destrutores são aqueles métodos que são chamados explicitamente pelo algoritmo para destruir objetos e liberar os espaços que eles ocupam em memória. Em Java métodos destrutores são implementos com o nome finalize() e definidos em cada classe."
 
 Questão 3 (Programação)
 Questão 4 (Programação)
