@@ -1,0 +1,48 @@
+Questão 1
+Questão 2
+	a)"Dois objetos instanciados através do método construtor padrão terão o mesmo estado, entretanto, suas referências não serão iguais."
+	Os objetos serem estanciados através do mesmo método construtor apenas implica em terem o mesmo estado, mas não em referenciarem o mesmo objeto.
+		
+	b)"Uma classe pode ter vários métodos construtores alternativos para instanciação de seus objetos."
+	Uma Classe pode ter quantos métodos construtores alternativos quiser.	
+	
+	c)
+	d)
+	e)
+
+Questão 3 (Programação)
+Questão 4 (Programação)
+Questão 5 (Programação)
+
+Questão 6
+	a) Não. Elas são instanciadas pela mesma classe mas não referenciam o mesmo objeto.
+	b)
+	Estado de q1 
+		a1 = 0;
+		a2 = 0.0;
+		a3 = null;
+		a4 = false;
+	
+	Estado de q2 
+		a1 = 0
+		a2 = 0.0
+		a3 = null 
+		a4 = false
+	Estado de q3
+		a1 = 1
+		a2 = 1.0
+		a3 = "null" 
+		a4 = false	
+	
+	c)
+	false (ele se referencia a objetos diferentes)
+	true 
+	false (o q1.a3 é uma string)
+	true	
+	true
+	false (novamente, eles não referenciam para o mesmo objeto também)		
+
+Questão 7
+Questão 8
+Questão 9
+Questão 10
