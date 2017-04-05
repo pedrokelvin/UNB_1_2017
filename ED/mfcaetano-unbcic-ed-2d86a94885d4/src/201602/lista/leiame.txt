@@ -1,0 +1,13 @@
+Para compilar o código, inicialmente, é necessário compilar os arquivos das bibliotecas.
+
+#gcc -ansi -Wall -c lista.c
+
+O comando acima irá gerar o arquivo lista.o. O parâmetro -c informa ao gcc que desejamos gerar somente o arquivo .o
+
+O próximo passo é compilar o código main.c e gerar o arquivo binario lista.
+
+#gcc -g -ansi -Wall -o lista main.c lista.o
+
+O comando acima gera o arquivo executável lista. Note que o arquivo lista.o (compilado anteriormente) é informado como parâmetro.
+
+O parâmetro -g irá gera o arquivo binario com os símbolos que poderão ser utilizados pelo gdb ou valgrind.

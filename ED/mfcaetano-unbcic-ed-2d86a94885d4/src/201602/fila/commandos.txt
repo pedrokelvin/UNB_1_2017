@@ -1,0 +1,4 @@
+gcc -c -g -Wall fila.c
+gcc -o fila -Wall -g main.c fila.o
+./fila
+valgrind ./fila
