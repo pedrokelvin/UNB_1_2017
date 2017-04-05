@@ -3,7 +3,7 @@ package questao5;
 
 public class Drone {
     
-    int nHelices,vel_vert_max, vel_hor_max,distanciaMaxi,autonomiaBateria; 
+    int nHelices,vel_vert_max, vel_hor_max; 
     String camera, modelo, marca;
     boolean gravacao = false;
     
@@ -15,8 +15,6 @@ public class Drone {
         nHelices = n;
         vel_vert_max = velV;
         vel_hor_max = velH;
-        distanciaMaxi = d;
-        autonomiaBateria = a;
         camera = c;
         modelo = m;
         marca = marc;
@@ -49,12 +47,5 @@ public class Drone {
     public void IniciarGrav(){
         gravacao = !gravacao;
     }
-    
-    public void diminuirVelMax(){     
-        if(autonomiaBateria <= 5){
-            vel_vert_max = vel_vert_max/2;
-            vel_hor_max = vel_hor_max/2;
-        } 
-    }
-   
+ 
 }
