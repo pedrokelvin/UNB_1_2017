@@ -1,14 +1,14 @@
 ## Questão 1:
 
-    +classe
-    *objeto
-    *elementos de classe
-    *atributos
-    *métodos
-    *método construtor padrão
-    *método construtor alternativo
-    *estado de um objeto
-    *retenção de estado
+    + classe
+    * objeto
+    * elementos de classe
+    * atributos
+    * métodos
+    * método construtor padrão
+    * método construtor alternativo
+    * estado de um objeto
+    * retenção de estado
 
 ## Questão 2:
 	
