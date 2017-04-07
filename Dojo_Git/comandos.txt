@@ -20,4 +20,4 @@ git push origin master --> envia para o repositório remoto
 
 git checkout outra_branch --> aqui muda para a branch que queremos
 
-
+git stash - desconsidera as mudanças realizadas
