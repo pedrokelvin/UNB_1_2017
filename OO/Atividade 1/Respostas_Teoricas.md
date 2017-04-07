@@ -1,6 +1,6 @@
 ## Questão 1:
 
-+ classe
+* classe
 * objeto
 * elementos de classe
 * atributos
