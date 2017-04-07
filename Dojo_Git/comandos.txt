@@ -1,0 +1,23 @@
+git init --> cria o repositório 
+
+git status 
+
+git add nome_do_arquivo.extensao 
+
+git log --> mostra o histórico de commits
+
+git commit -m"Aqui coloca o commit"
+
+git reset endereco_do_commit --> Aqui ele retorna para o endereço do commit que vc quer
+
+git reset --hard endereco_do_commit --> aqui ele retorna para o endereço do commit que queremos e tambem exclui o que foi feito. Não tem mais volta
+
+git remote add origin https://aqui_o_endereco_do_repositorio
+
+git branch -a --> lista a qtd de branchs // a master é criada por default
+
+git push origin master --> envia para o repositório remoto
+
+git checkout outra_branch --> aqui muda para a branch que queremos
+
+
