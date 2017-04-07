@@ -1,5 +1,4 @@
 
-
 /* IMPLEMENTAÇÃO DE PILHA COM AS ASSINATURAS DO PROFESSOR*/
 
 #include <stdio.h>
