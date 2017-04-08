@@ -86,37 +86,35 @@ O construtor padrão também é uma subrotina, porém é uma subrotina especial,
 ## Questão 10
 
 {% highlight java %}
-
 public class Turma {
-    int codTurma;
-    int numVagasTotal;
-    int numVagasLivres;
-    int numVagasOcupadas;
-    String diasOcorrencia;
-    String horariosOcorrencia;
-    Disciplina disc;
+ int codTurma;
+ int numVagasTotal;
+ int numVagasLivres;
+ int numVagasOcupadas;
+ String diasOcorrencia;
+ String horariosOcorrencia;
+ Disciplina disc;
     
-    Turma(int c, int nT, int nL, int nO, String d, String h, Disciplina D){
-        codTurma = c;
-        numVagasTotal = nT;
-        numVagasLivres = nL;
-        numVagasOcupadas = nO;
-        diasOcorrencia = d;
-        horariosOcorrencia = h;
-        disc = D;
-    }
-    
-    public String obterDetalhes(){
-        String resposta = "";
-        resposta += "Turma " + codTurma + " da disciplina de " + disc.nome + '\n';
-        resposta += "Numero total de vagas: " + numVagasTotal + '\n';
-        resposta += "Numero de vagas livres: " + numVagasLivres + '\n';
-        resposta += "Numero de vagas ocupadas: " + numVagasOcupadas + '\n';
-        resposta += "Dias de ocorrencias: " + diasOcorrencia + '\n';
-        resposta += "Horarios de ocorrencia: " + horariosOcorrencia + '\n';
-             
-        return resposta;
-    }
-}
+ Turma(int c, int nT, int nL, int nO, String d, String h, Disciplina D){
+  codTurma = c;
+  numVagasTotal = nT;
+  numVagasLivres = nL;
+  numVagasOcupadas = nO;
+  diasOcorrencia = d;
+  horariosOcorrencia = h;
+  disc = D;
+ }
+ 
+ public String obterDetalhes(){
+  String resposta = "";
+  resposta += "Turma " + codTurma + " da disciplina de " + disc.nome + '\n';
+  resposta += "Numero total de vagas: " + numVagasTotal + '\n';
+  resposta += "Numero de vagas livres: " + numVagasLivres + '\n';
+  resposta += "Numero de vagas ocupadas: " + numVagasOcupadas + '\n';
+  resposta += "Dias de ocorrencias: " + diasOcorrencia + '\n';
+  resposta += "Horarios de ocorrencia: " + horariosOcorrencia + '\n';
 
+ return resposta;
+ }
+}
 {% endhighlight %}
