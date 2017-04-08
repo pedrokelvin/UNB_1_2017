@@ -86,6 +86,7 @@ O construtor padrão também é uma subrotina, porém é uma subrotina especial,
 ## Questão 10
 
 {% highlight java %}
+
 public class Turma {
     
     int codTurma;
@@ -118,4 +119,5 @@ public class Turma {
         return resposta;
     }
 }
+
 {% endhighlight %}
