@@ -86,24 +86,25 @@ O construtor padrão também é uma subrotina, porém é uma subrotina especial,
 ## Questão 10
 
 {% highlight java %}
+package questão.pkg10;
 public class Turma {
- int codTurma;
- int numVagasTotal;
- int numVagasLivres;
- int numVagasOcupadas;
- String diasOcorrencia;
- String horariosOcorrencia;
- Disciplina disc;
+  int codTurma;
+  int numVagasTotal;
+  int numVagasLivres;
+  int numVagasOcupadas;
+  String diasOcorrencia;
+  String horariosOcorrencia;
+  Disciplina disc;
     
- Turma(int c, int nT, int nL, int nO, String d, String h, Disciplina D){
-  codTurma = c;
-  numVagasTotal = nT;
-  numVagasLivres = nL;
-  numVagasOcupadas = nO;
-  diasOcorrencia = d;
-  horariosOcorrencia = h;
-  disc = D;
- }
+  Turma(int c, int nT, int nL, int nO, String d, String h, Disciplina D){
+   codTurma = c;
+   numVagasTotal = nT;
+   numVagasLivres = nL;
+   numVagasOcupadas = nO;
+   diasOcorrencia = d;
+   horariosOcorrencia = h;
+   disc = D;
+  }
  
  public String obterDetalhes(){
   String resposta = "";
@@ -117,4 +118,5 @@ public class Turma {
  return resposta;
  }
 }
+
 {% endhighlight %}
