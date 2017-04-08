@@ -88,7 +88,6 @@ O construtor padrão também é uma subrotina, porém é uma subrotina especial,
 {% highlight java %}
 
 public class Turma {
-    
     int codTurma;
     int numVagasTotal;
     int numVagasLivres;
