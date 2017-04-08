@@ -86,6 +86,30 @@ O construtor padrão também é uma subrotina, porém é uma subrotina especial,
 ## Questão 10
 
 {% highlight java %}
+package questao7;
+public class Principal {
+  public static void main(String[] args) {
+    Curso c1, c2;
+    Aluno a1, a2, a3;
+    c1 = new Curso(1, "Engenharia de Software", 240);
+    c2 = new Curso(2, "Engenharia Eletrônica", 257);
+    
+    a1 = new Aluno("Andre", c1, 13, 23, 02, 1983);
+    a2 = new Aluno("Maria", c2, 5, 27, 5, 1994);
+    a3 = new Aluno("Junior", c1, 70, 16, 11, 1995);
+    
+    System.out.println(a1.obterDetalhes());
+    System.out.println(a2.obterDetalhes());
+    System.out.println(a3.obterDetalhes());
+    a3 = a2;
+    System.out.println(a1 == a2);
+    System.out.println(a1 == a3);
+    System.out.println(a2 == a3);
+  }
+}
+{% endhighlight %}
+
+{% highlight java %}
 package questão.pkg10;
 public class Turma {
   int codTurma;
