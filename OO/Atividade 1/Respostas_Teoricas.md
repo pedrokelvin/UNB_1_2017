@@ -85,3 +85,257 @@ O construtor padrão também é uma subrotina, porém é uma subrotina especial,
 
 ## Questão 10
 
+###a)
+
+{% highlight java %}
+package questão.pkg10;
+
+
+public class Turma {
+    
+    int codTurma;
+    int numVagasTotal;
+    int numVagasLivres;
+    int numVagasOcupadas;
+    String diasOcorrencia;
+    String horariosOcorrencia;
+    Disciplina disc;
+    
+    Turma(int c, int nT, int nL, int nO, String d, String h, Disciplina D){
+        codTurma = c;
+        numVagasTotal = nT;
+        numVagasLivres = nL;
+        numVagasOcupadas = nO;
+        diasOcorrencia = d;
+        horariosOcorrencia = h;
+        disc = D;
+    }
+    
+    public String obterDetalhes(){
+        String resposta = "";
+        resposta += "Turma " + codTurma + " da disciplina de " + disc.nome + '\n';
+        resposta += "Numero total de vagas: " + numVagasTotal + '\n';
+        resposta += "Numero de vagas livres: " + numVagasLivres + '\n';
+        resposta += "Numero de vagas ocupadas: " + numVagasOcupadas + '\n';
+        resposta += "Dias de ocorrencias: " + diasOcorrencia + '\n';
+        resposta += "Horarios de ocorrencia: " + horariosOcorrencia + '\n';
+             
+        return resposta;
+    }
+}
+{% endhighlight  %} 
+
+###b)
+
+{% highlight java %}
+package questão.pkg10;
+
+
+public class Questão10 {
+
+    
+    public static void main(String[] args) {
+        Curso c1;
+        Disciplina d1,d2;
+        Turma t1, t2, t3;
+        String resposta;
+        
+        c1 = new Curso(1, "Engenharia de Software", 240);
+        
+        d1 = new Disciplina(1,4, "Orientação a Objetos","FGA", c1);
+        d2 = new Disciplina(2,4, "Desenvolvimento Avançado de Software","FGA", c1);
+        
+        t1 = new Turma(1, 46, 46, 0, "Quartas e Sextas", "12:00 - 16:00", d1);
+        t2 = new Turma(1, 30, 30, 0, "Quartas e Sextas", "16:00 - 18:00", d2);
+   
+        System.out.println(resposta = t1.obterDetalhes());
+        System.out.println("---------------------------");
+        System.out.println(resposta = t2.obterDetalhes());
+        
+    }
+    
+}
+{% endhighlight  %}
+
+###c)
+
+{% highlight java %}
+package questão.pkg10;
+
+
+public class Questão10 {
+
+    
+    public static void main(String[] args) {
+        Curso c1;
+        Disciplina d1,d2;
+        Turma t1, t2, t3;
+        String resposta;
+        
+        c1 = new Curso(1, "Engenharia de Software", 240);
+        
+        d1 = new Disciplina(1,4, "Orientação a Objetos","FGA", c1);
+        d2 = new Disciplina(2,4, "Desenvolvimento Avançado de Software","FGA", c1);
+        
+        t1 = new Turma(1, 46, 46, 0, "Quartas e Sextas", "12:00 - 16:00", d1);
+        t2 = new Turma(1, 30, 30, 0, "Quartas e Sextas", "16:00 - 18:00", d2);
+   
+        System.out.println(resposta = t1.obterDetalhes());
+        System.out.println("---------------------------");
+        System.out.println(resposta = t2.obterDetalhes());
+        
+    }
+    
+}
+{% endhighlight  %}
+
+###d)
+
+{% highlight java %}
+package questão.pkg10;
+
+
+public class Questão10 {
+
+    
+    public static void main(String[] args) {
+        Curso c1,c2;
+        Disciplina d1,d2;
+        Turma t1, t2, t3;
+        Aluno a1, a2, a3;
+        
+        String resposta;
+        
+        c1 = new Curso(1, "Engenharia de Software", 240);
+        c2 = new Curso(2, "Engenharia Eletrônica", 257);
+        
+        d1 = new Disciplina(1,4, "Orientação a Objetos","FGA", c1);
+        d2 = new Disciplina(2,4, "Desenvolvimento Avançado de Software","FGA", c1);
+        
+        t1 = new Turma(1, 46, "Quartas e Sextas", "12:00 - 16:00", d1);
+        t2 = new Turma(1, 30, "Quartas e Sextas", "16:00 - 18:00", d2);
+   
+        a1 = new Aluno("Andre", c1, 13, 23, 02, 1983);
+        a2 = new Aluno("Maria", c2, 5, 27, 5, 1994);
+        a3 = new Aluno("Junior", c1, 70, 16, 11, 1995);
+        
+        a1.Matricula(t1);
+        a2.Matricula(t1);
+        a3.Matricula(t2);
+    }
+    
+}
+{% endhighlight  %}
+
+
+{% highlight java %}
+package questão.pkg10;
+
+
+public class Disciplina {
+ 
+    int codDisciplina;
+    int cargaHora;
+    String nome;
+    String departamento;
+    Curso curso;
+    
+    Disciplina(int c, int ca, String n, String d, Curso cur){
+        codDisciplina = c;
+        cargaHora = ca;
+        nome = n;
+        departamento = d;
+        curso = cur;
+    }
+    
+    public String obterDetalhes() {
+    String resposta = "";
+    resposta += "Disciplina: " + nome + "do curso de " + curso.nomeCurso + '\n';
+    resposta += "Codigo: " + codDisciplina + '\n';
+    resposta += "Carga horaria: " + cargaHora;
+   
+    return resposta; 
+  }
+    
+}
+{% endhighlight  %}
+
+
+{% highlight java %}
+package questão.pkg10;
+
+
+public class Curso {
+  int codigo;
+  String nomeCurso; 
+  int cargaHoraria;
+  
+  Curso (int cod, String nome, int ch) {
+    codigo = cod;
+    nomeCurso = nome; 
+    cargaHoraria = ch;
+  }
+  
+  public String obterDetalhes() {
+    String resposta = "";
+    resposta += "Nome do curso: " + nomeCurso + '\n';
+    resposta += "Codigo: " + codigo + '\n';
+    resposta += "Carga horaria: " + cargaHoraria;
+   
+    return resposta; 
+  }
+  
+  protected void finalize() {
+    System.out.println("Esse objeto CURSO vai ser destruido.");
+    System.out.println("Detalhes do objeto: " + '\n');
+    System.out.println(obterDetalhes());
+  }
+    
+}
+{% endhighlight  %}
+
+
+{% highlight java %}
+package questão.pkg10;
+
+
+public class Aluno {
+  String nome; 
+  Curso curso;
+  int matricula;
+  int diaNascimento, 
+      mesNascimento, 
+      anoNascimento;
+ 
+  
+  public Aluno(String nom, Curso cur, int mat, int dNasc, int mNasc, int aNasc) {
+    nome = nom;
+    curso = cur;
+    matricula = mat;
+    diaNascimento = dNasc; 
+    mesNascimento = mNasc;
+    anoNascimento = aNasc;
+  }
+  
+  public String obterDetalhes() {
+    String resposta = "";
+    resposta += "Nome: " + nome + '\n';
+    resposta += "Curso: " + curso + '\n';
+    resposta += "Data de nascimento: " + diaNascimento + '/' + 
+                                     mesNascimento + '/' + 
+                                     anoNascimento;
+    return resposta; 
+  }
+  
+  public void Matricula(Turma t){
+      t.Matricula();
+  }
+  
+  protected void finalize() {
+    System.out.println("Esse objeto ALUNO vai ser destruido.");
+    System.out.println("Detalhes do objeto: " + '\n');
+    System.out.println(obterDetalhes());
+  } 
+} 
+{% endhighlight  %}
+
