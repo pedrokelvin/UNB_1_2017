@@ -86,6 +86,7 @@ O construtor padrão também é uma subrotina, porém é uma subrotina especial,
 ## Questão 10
 
 {% highlight java %}
+
 package questao7;
 public class Principal {
   public static void main(String[] args) {
@@ -107,6 +108,7 @@ public class Principal {
     System.out.println(a2 == a3);
   }
 }
+
 {% endhighlight %}
 
 {% highlight java %}
