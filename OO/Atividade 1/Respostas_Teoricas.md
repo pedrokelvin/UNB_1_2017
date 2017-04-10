@@ -7,6 +7,7 @@ A classe contém atributos e métodos, que são responsáveis por descrever obje
 
 Objetos podem ser criados e destruídos do programa, e podem ser criados vários objetos com a mesma estrutura, se eles forem da mesma classe. Objeto é uma instância da classe, ou seja, a classe é uma forma para o objeto. Tratando de um bolo, a classe é a forma do bolo e o bolo é um objeto que pode ser de chocolate, laranja ou do que quer que você queira, e cada bolo que é feito é um novo objeto. 
 * elementos de classe
+Os elementos de uma classe são os atributos e métodos que cada classe possui.
 
 * atributos
 
@@ -18,8 +19,14 @@ Os metódos estão dentro de uma classe e fazem parte dos objetos. Métodos são
 
 O construtor padrão também é uma subrotina, porém é uma subrotina especial, com o papel de alocar memória para o objeto e inicializar os atributos, retornando a referência para o objeto. Toda classe tem um contrutor padrão assim que ela é criada, mesmo se o programador não declarar ela o sistema irá providenciar um método construtor padrão.
 * método construtor alternativo
+
+O método construtor alternativo, assim, como o padrão, também aloca um espaço na memória para o objeto, a diferença é que a inicialização dos atributos é feita de acordo com uma passagem de parâmetros. Diferente do método padrão, esse método pode atribuir quaisquer valores para os diversos atributos do objeto, bastanto apenas que sejam passados esses valores como parâmetro na chamado do método alternativo. 
 * estado de um objeto
+
+Ao conjunto de valores que os atributos de um objeto armazena em um instante, dá-se o nome de estado do objeto
 * retenção de estado
+
+Retenção de estados é uma propriedade do paradigma OO que permite aos objetos manterem os valores de seus atributos até o momento em que um estímulo externo ao objeto solicite uma alteração no valor de algum atributo.
 
 ## Questão 2:
 	
