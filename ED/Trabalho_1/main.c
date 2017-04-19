@@ -6,22 +6,98 @@ typedef struct pilha{
   int topo;
 }p_nodo;
 
-p_nodo *getNodo();
+p_nodo *getNodo(p_nodo *pilha);
 int desempilha(char c, p_nodo *pilha);
 p_nodo *empilha(char c, p_nodo *pilha);
 int pilhaVazia(p_nodo *pilha);
 void liberaPilha(p_nodo *pilha);
+void validacao(char *expre);
+void imprimePosfixa(char *expre);
+
 
 int main(){
 
-  char expre[100];
-  int i = 0;
-  int verif = 1;
-  p_nodo *pilha = (p_nodo *) malloc(sizeof(p_nodo));
-  pilha = getNodo();
-
+  char *expre;
+  expre = (char *) malloc(sizeof(char)*100);
   scanf("%s",expre);
   getchar();
+
+  validacao(expre);
+  imprimePosfixa(expre);
+
+  return 0;
+}
+
+//Inicializa uma pilha
+p_nodo *getNodo(p_nodo *pilha){
+  pilha = (p_nodo *) malloc(sizeof(p_nodo));
+  pilha->caracter = (char *) malloc(sizeof(char)*100);
+  pilha->topo = 0;
+
+  return pilha;
+} //end getNodo
+
+p_nodo *empilha(char c, p_nodo *pilha){
+
+    pilha->caracter[pilha->topo++] = c;
+
+    return pilha;
+}//end empilha
+
+int pilhaVazia(p_nodo *pilha){
+  if(pilha->topo)
+    return 0;
+  return 1;
+
+}//end pilhaVazia
+
+int desempilha(char c, p_nodo *pilha){
+
+  char aux = pilha->caracter[pilha->topo - 1];
+
+  if(pilha->topo == 0)
+    return 0;
+
+  switch(aux){
+
+      case '{':
+        if(c == '}'){
+          --pilha->topo;
+          return 1;
+        }
+
+      break;
+
+      case '(':
+        if(c == ')'){
+          --pilha->topo;
+          return 1;
+        }
+      break;
+
+      case '[':
+        if(c == ']'){
+          --pilha->topo;
+          return 1;
+        }
+      break;
+
+  }
+
+  return 0;
+}//end desempilha
+
+void liberaPilha(p_nodo *pilha){
+  free(pilha->caracter);
+  free(pilha);
+}
+
+//Avalia a expressão quanto a disposição dos parênteses
+void validacao(char *expre){
+
+  int i = 0;
+  int verif = 1;
+  p_nodo *pilha = getNodo(pilha);
 
   while(expre[i] != '\0' && verif){
 
@@ -40,11 +116,15 @@ int main(){
   else if(verif == 0)
     printf("Invalida\n");
 
-  //-----------------------------A PARTIR DAQUI FAZ A IMPRESSÃO DA NOTAÇÃO POSFIXA-------------------
-
   liberaPilha(pilha);
-  pilha = getNodo();
-  i = 0;
+
+}
+
+//Imprime a expressão na forma posfixa
+void imprimePosfixa(char *expre){
+
+  p_nodo *pilha = getNodo(pilha);
+  int i = 0;
 
   while(expre[i] != '\0'){
 
@@ -130,74 +210,4 @@ int main(){
   }
 
   printf("\n");
-
-  return 0;
-}
-
-//Inicializa uma pilha
-p_nodo *getNodo(){
-  p_nodo *pilha = (p_nodo *) malloc(sizeof(p_nodo));
-  pilha->caracter = (char *) malloc(sizeof(char)*100);
-  pilha->topo = 0;
-
-  return pilha;
-} //end getNodo
-
-//Empilha caracter
-p_nodo *empilha(char c, p_nodo *pilha){
-
-    pilha->caracter[pilha->topo++] = c;
-
-    return pilha;
-}//end empilha
-
-//Verifica se pilha está vazia
-int pilhaVazia(p_nodo *pilha){
-  if(pilha->topo)
-    return 0;
-  return 1;
-
-}//end pilhaVazia
-
-//Função de desempilhar
-int desempilha(char c, p_nodo *pilha){
-
-  char aux = pilha->caracter[pilha->topo - 1];
-
-  if(pilha->topo == 0)
-    return 0;
-
-  switch(aux){
-
-      case '{':
-        if(c == '}'){
-          --pilha->topo;
-          return 1;
-        }
-
-      break;
-
-      case '(':
-        if(c == ')'){
-          --pilha->topo;
-          return 1;
-        }
-      break;
-
-      case '[':
-        if(c == ']'){
-          --pilha->topo;
-          return 1;
-        }
-      break;
-
-  }
-
-  return 0;
-}//end desempilha
-
-void liberaPilha(p_nodo *pilha){
-  free(pilha->caracter);
-  free(pilha);
-
 }
