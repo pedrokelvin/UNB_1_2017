@@ -1,34 +1,38 @@
+
+
+/*APRENDENDO A USAR "PAIR" COM VECTOR E ORDENAR DE ACORDO COM QUAISQUER PARAMETROS*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
 
-typedef struct S{
-  string nome;
-  int valor;
+using is = pair<int,string>;
 
-}Nome;
-
-bool comp(string a, string b);
+bool comp(is a, is b);
 
 int main(){
 
-  list<Nome> n;
+  vector<is> v;
+  string b;
+  int a;
 
-  n.push_back("Pedro",10);
-  n.push_back("Pedrodasdas");
-  n.push_back("Pedr");
-  n.push_back("Pedrasdddddddad");
-  n.push_back("Pe");
+  while(cin >> a >> b)
+    v.push_back(is(a,b));
 
-  n.sort(comp);
+    cout << "---------------" << endl;
 
-  for(auto i : n)
-    cout << i << endl;
+  sort(v.begin(),v.end(),comp);
+
+  for(auto i : v)
+    cout << i.first << " " << i.second << endl;
 
   return 0;
 }
 
-bool comp(string a, string b){
-  return a.size() > b.size();
+bool comp(is a, is b){
 
+  if(a.first == b.first)
+    return a.second > b.second;
+  else
+    return a.first > b.first;
 }
