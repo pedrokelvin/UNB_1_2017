@@ -2,8 +2,9 @@
 * @file declaracoes.h
 * @author Pedro Kelvin
 * @date 1 Maio 2017
-* @brief Arquivo contendo as declarações das funções para a conversão de uma expressão para
-* a forma pós-fixa. Bem como a reprensentação de uma calculadora através do uso de pilha.
+* @brief Arquivo para a execução do programa de conversão de uma expressão da
+* forma infixa para a forma pós-fixa. Bem como a reprensentação de uma calculadora
+* através do uso de pilha.
 * Trabalho proposta para a disciplina de Estrutura de Dados - Unb
 */
 

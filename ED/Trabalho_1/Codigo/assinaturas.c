@@ -2,8 +2,9 @@
 * @file assinaturas.c
 * @author Pedro Kelvin
 * @date 1 Maio 2017
-* @brief Arquivo contendo implementações de funções para a conversão de uma expressão para
-* a forma pós-fixa. Bem como a reprensentação de uma calculadora através do uso de pilha.
+* @brief Arquivo para a execução do programa de conversão de uma expressão da
+* forma infixa para a forma pós-fixa. Bem como a reprensentação de uma calculadora
+* através do uso de pilha.
 * Trabalho proposta para a disciplina de Estrutura de Dados - Unb
 */
 
@@ -205,13 +206,17 @@ void calculadora(){
 
   while(scanf("%s",num) != EOF)
   {
+
+    if(num[0] == 'q')
+        return;
+
     double a = 0, b = 0, x = 0, N = 0, K = 0;
 
     if(pilhaVazia(pilha))
     {
 
-      if(num[0] == '*' || num[0] == '/' || num[0] == '-' || num[0] == '+')
-        printf("----------------Numero de operandos insuficiente---------");
+      if(num[0] == '*' || num[0] == '/' || num[0] == '-' || num[0] == '+' || num[0] == 'c')
+        printf("----------------Numero de operandos insuficiente---------\n");
       else{
         x = conv(num);
         //printf("%.2lf\n",x);

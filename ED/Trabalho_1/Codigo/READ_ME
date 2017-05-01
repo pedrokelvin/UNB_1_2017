@@ -1,0 +1,6 @@
+Para a execução do programa, devem ser executados os seguintes passos no terminal:
+
+	$gcc assinaturas.c -c
+	$gcc assinaturas.o main.c
+	$./a.out
+
