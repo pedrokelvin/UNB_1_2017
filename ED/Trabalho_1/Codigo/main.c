@@ -1,3 +1,12 @@
+/**
+* @file main.c
+* @author Pedro Kelvin
+* @date 1 Maio 2017
+* @brief Arquivo principal para a execução da conversão de uma expressão da forma infixa para
+* a forma pós-fixa. Bem como a reprensentação de uma calculadora através do uso de pilha.
+* Trabalho proposta para a disciplina de Estrutura de Dados - Unb
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include "declaracoes.h"
@@ -16,7 +25,7 @@ int main(){
 
       case 1:
         getchar();
-        printf("Modo expressao\n");
+        printf("\nModo expressao\n");
         scanf("%[^'\n']",expre);
         valida = validacao(expre);
         if(valida)

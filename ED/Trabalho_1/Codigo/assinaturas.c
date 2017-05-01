@@ -1,11 +1,21 @@
+/**
+* @file assinaturas.c
+* @author Pedro Kelvin
+* @date 1 Maio 2017
+* @brief Arquivo contendo implementações de funções para a conversão de uma expressão para
+* a forma pós-fixa. Bem como a reprensentação de uma calculadora através do uso de pilha.
+* Trabalho proposta para a disciplina de Estrutura de Dados - Unb
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "declaracoes.h"
 
-//Inicializa uma pilha
+
 p_nodo *getNodo(p_nodo *pilha){
+
   pilha = (p_nodo *) malloc(sizeof(p_nodo));
   pilha->caracter = (double *) malloc(sizeof(double)*100);
   pilha->topo = 0;
@@ -18,28 +28,28 @@ p_nodo *empilha(double c, p_nodo *pilha){
     pilha->caracter[pilha->topo++] = c;
 
     return pilha;
-} //end empilha
+}
 
 int pilhaVazia(p_nodo *pilha){
+
   if(pilha->topo)
     return 0;
   return 1;
 
-}//end pilhaVazia
+}
 
 p_nodo *desempilha(p_nodo *pilha){
 
     --pilha->topo;
 
   return pilha;
-} //end desempilha
+}
 
 void liberaPilha(p_nodo *pilha){
   free(pilha->caracter);
   free(pilha);
 }
 
-//Avalia a expressão quanto a disposição dos parênteses
 int validacao(char *expre){
 
   int i = 0;
@@ -64,16 +74,15 @@ int validacao(char *expre){
   }
 
   if(verif == 1)
-    printf("Valida\n");
+    printf("\nValida\n");
   else if(verif == 0)
-    printf("Invalida\n");
+    printf("\nInvalida\n");
 
   liberaPilha(pilha);
   return verif;
-
 }
 
-//Imprime a expressão na forma posfixa
+
 void imprimePosfixa(char *expre){
 
   p_nodo *pilha = getNodo(pilha);
@@ -192,7 +201,7 @@ void calculadora(){
   j = 0;
   i = 0;
 
-  printf("Pilha Vazia!\n");
+  printf("\nPilha Vazia!\n");
 
   while(scanf("%s",num) != EOF)
   {
@@ -352,10 +361,8 @@ void calculadora(){
       else if(num[0] == 'c')
       {
           N = pilha->caracter[pilha->topo - 1];
-          printf("%.2lf\n",N);
           desempilha(pilha);
           K = pilha->caracter[pilha->topo - 1];
-          printf("%.2lf\n",K);
           desempilha(pilha);
 
           i = N;
@@ -384,7 +391,7 @@ void calculadora(){
 double conv(char *a){
 
     int aux = -1, j = 0, k = 0, at;
-    char num[10];
+    char num[20];
     float c;
 
     for(int i = 0; i < strlen(a); ++i)
@@ -465,12 +472,13 @@ void calcula_posfixa(char *a){
             pilha = empilha(x/y,pilha);
 
         }
-        else if(a[i] != ' ' && a[i] != '+' && a[i] != '-' && a[i] != '*' && a[i] != '/' && a[i] != '\0')
+        else if(a[i] != ' ' && a[i] != '+' && a[i] != '-' && a[i] != '*' && a[i] != '/' && a[i] != '\0'
+        && a[i] != '.')
         {
-            char aux[10];
+            char aux[20];
             int k = 0;
             int j = i;
-            int conv;
+            double n;
 
             while(a[j] != ' ' && a[j] != '+' && a[j] != '-' && a[j] != '*' && a[j] != '/' && a[j] != '\0')
             {
@@ -482,8 +490,10 @@ void calcula_posfixa(char *a){
             aux[k] = '\0';
             i = j - 1;
 
-            conv = atoi(aux);
-            pilha = empilha(conv,pilha);
+            n = conv(aux);
+            setbuf(stdin,NULL);
+            pilha = empilha((double) n,pilha);
+
         }
 
         i++;
