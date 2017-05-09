@@ -4,25 +4,31 @@ using namespace std;
 
 int main(){
 
-  int i, j = 0;
-  string numero;
-  string nome1 = "one";
-  string nome2 = "two";
+    int N;
 
-  cin >> i;
+    while(N--)
+    {
+        int k = 0, j = 0;
+        string a = "one", b = "two", c = "three";
+        string d;
+        cin >> d;
 
-  while(i--){
+        if(d.size() > 3)
+            cout << "3" << endl;
+        else
+        {
+            for(auto i:d)
+            {
+                if(a.find(i) != string::npos)
+                    k++;
+            }
+        }
 
-    cin >> numero;
-
-    if(numero.size() == 5)
-      coarut << 3 << endl;
-    else{
-
+        if(j > 1)
+            cout << "2";
+        else if(k > 1)
+            cout << "1";
     }
 
-  }
-
-
-  return 0;
+    return 0;
 }
